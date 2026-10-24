@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Starlight Stacker</title>
+<link rel="stylesheet" href="./style.css"/>
+<script type="importmap">
+{
+  "imports": {
+    "three": "./lib/three.module.js",
+    "three/addons/": "./lib/addons/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="ui">
+  <div class="topbar">
+    <div class="logo"><i></i> Starlight Stacker</div>
+    <div class="stats">
+      <div class="stat">Height: <b id="heightVal">0.0 m</b></div>
+      <div class="stat">Blocks: <b id="scoreVal">0 / 10</b></div>
+      <div class="stat">Best: <b id="bestVal">0</b></div>
+    </div>
+  </div>
+  <div id="toast">Perfect!</div>
+  <div id="centerMsg">
+    <div class="panel" id="panelContent">
+      <h1>Starlight Stacker</h1>
+      <p>Stack the starlit relics to reach the constellations. The moving piece glides above your tower — drop it at the right moment. Perfect alignment gives you full width, poor cuts make the tower shrink. Miss entirely and the stars fall.</p>
+      <p><span class="kbd">SPACE</span> or <span class="kbd">CLICK</span> to drop • Drag to orbit • Scroll to zoom</p>
+      <p style="font-size:12px;color:#7fa0d0">Uses: Cube2 Metal • Cabinet • Houses Second Age — all rendered from GLB assets.<br>Goal: 10 blocks stacked. Fail if a block falls away.</p>
+      <div class="row">
+        <button class="btn primary" id="playBtn">▶ Launch</button>
+        <button class="btn" id="muteBtn">♫ Music On</button>
+      </div>
+      <div style="margin-top:14px;font-size:12px;color:#9bb2dc">Tip: Alternate axes! Each new level slides on the other direction (X→Z→X).</div>
+    </div>
+  </div>
+  <button class="btn primary" id="dropBtn">DROP ▾</button>
+  <div class="bottombar">
+    <div class="left"><span class="dot"></span> <span id="statusTxt">Loading starlight assets…</span><div class="progress"><i id="progressBar"></i></div></div>
+    <div>Target: 10 • Stability: <span id="stabVal">Solid</span></div>
+  </div>
+</div>
+<audio id="bgm" src="./assets/bgm.mp3" loop preload="auto"></audio>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
